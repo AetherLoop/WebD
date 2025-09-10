@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Link vs Button Example</title>
+  <style>
+    /* ====== BUTTON STYLE FOR LINKS ====== */
+    .button {
+      background: purple;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .button:hover {
+      background: darkmagenta;
+    }
+
+    /* ====== BUTTON STYLE ====== */
+    button {
+      background: orange;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: darkorange;
+    }
+  </style>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+
+  <h1>Link vs Button Example</h1>
+
+  <!-- Real Link using href -->
+  <p>This is a normal link that takes you to another site:</p>
+  <a href="https://openai.com" target="_blank">Visit OpenAI</a>
+
+  <hr>
+
+  <!-- Link styled like a button -->
+  <p>This link looks like a button but still uses href:</p>
+  <a href="https://openai.com" target="_blank" class="button">OpenAI Styled Button</a>
+
+  <hr>
+
+  <!-- Real Button for actions -->
+  <p>This is a real button that performs an action:</p>
+  <button onclick="alert('Hello! This is a button click action.')">Click Me</button>
+
+
+
+</body>
+</html>
