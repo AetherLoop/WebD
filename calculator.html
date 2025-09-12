@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hemant's Calculator</title>
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1720;
+      --accent:#69f0ae;
+      --accent-2:#7c4dff;
+      --muted:#9aa6b2;
+      font-family: Inter, system-ui, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--bg);
+      color:var(--muted);
+      padding:28px;
+    }
+
+    .calculator{
+      width:min(420px, 96vw);
+      background:#111827;
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.6);
+    }
+
+    .display{
+      background:#1f2937;
+      border-radius:12px;
+      padding:14px 16px;
+      margin-bottom:14px;
+      min-height:60px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      font-size:28px;
+      font-weight:600;
+      color:#dfffee;
+      overflow-x:auto;
+    }
+
+    .pad{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+    }
+    .btn{
+      background:#1e293b;
+      border-radius:10px;
+      padding:16px;
+      font-size:18px;
+      text-align:center;
+      cursor:pointer;
+      user-select:none;
+      transition:0.15s;
+      color:var(--muted);
+    }
+    .btn:active{transform:scale(0.95)}
+
+    .btn.operator{
+      background:var(--accent-2);
+      color:white;
+      font-weight:600;
+    }
+    .btn.equal{
+      grid-column: span 2;
+      background:linear-gradient(90deg, var(--accent), var(--accent-2));
+      font-weight:700;
+      color:#051018;
+    }
+    .btn.clear{
+      background:#dc2626;
+      color:white;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+
+    <div class="pad" id="pad">
+      <button class="btn clear" data-action="clear">C</button>
+      <button class="btn" data-action="back">⌫</button>
+      <button class="btn" data-value="%">%</button>
+      <button class="btn operator" data-value="/">÷</button>
+
+      <button class="btn" data-value="7">7</button>
+      <button class="btn" data-value="8">8</button>
+      <button class="btn" data-value="9">9</button>
+      <button class="btn operator" data-value="*">×</button>
+
+      <button class="btn" data-value="4">4</button>
+      <button class="btn" data-value="5">5</button>
+      <button class="btn" data-value="6">6</button>
+      <button class="btn operator" data-value="-">−</button>
+
+      <button class="btn" data-value="1">1</button>
+      <button class="btn" data-value="2">2</button>
+      <button class="btn" data-value="3">3</button>
+      <button class="btn operator" data-value="+">+</button>
+
+      <button class="btn" data-value="0">0</button>
+      <button class="btn" data-value=".">.</button>
+      <button class="btn equal" data-action="equals">=</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+    let current = '';
+
+    function updateDisplay(){
+      display.textContent = current || '0';
+    }
+
+    function safeEval(expr){
+      return Function('return (' + expr + ')')();
+    }
+
+    function handleInput(val){
+      current += val;
+      updateDisplay();
+    }
+
+    function handleEquals(){
+      try{
+        current = String(safeEval(current.replace(/÷/g,'/').replace(/×/g,'*').replace(/−/g,'-')));
+      }catch(err){
+        current = 'Error';
+      }
+      updateDisplay();
+    }
+
+    function handleBack(){
+      current = current.slice(0,-1);
+      updateDisplay();
+    }
+
+    function handleClear(){
+      current = '';
+      updateDisplay();
+    }
+
+    // Button clicks
+    document.getElementById('pad').addEventListener('click', e => {
+      const btn = e.target.closest('button');
+      if(!btn) return;
+      const val = btn.dataset.value;
+      const action = btn.dataset.action;
+
+      if(action === 'clear') return handleClear();
+      if(action === 'back') return handleBack();
+      if(action === 'equals') return handleEquals();
+      if(val) return handleInput(val);
+    });
+
+    // Keyboard support
+    window.addEventListener('keydown', e => {
+      if(e.key >= '0' && e.key <= '9') { handleInput(e.key); return; }
+      if(e.key === '.') { handleInput('.'); return; }
+      if(['+','-','*','/','%'].includes(e.key)) { handleInput(e.key); return; }
+      if(e.key === 'Enter' || e.key === '=') { e.preventDefault(); handleEquals(); return; }
+      if(e.key === 'Backspace') { handleBack(); return; }
+      if(e.key === 'Escape') { handleClear(); return; }
+    });
+
+    updateDisplay();
+  </script>
+</body>
+</html>
