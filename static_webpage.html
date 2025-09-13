@@ -1,159 +1,116 @@
-<!--
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
- <title>Lab6 Q1</title>
- <style>
- .head-container{
- background-color: black;
- margin:0px;
- }
- .header{
- background-color: black;
- color: white;
- text-align: left;
- width: 100%;
- height: 150px;
+   <title>Lab6 Q1</title>
+   <style>
+      body{
+         margin: 0px 0px 0px 0px;
+         font-family:Arial, Helvetica, sans-serif;
+      }
+      .topside {
+         background-color: black;
+         text-align: left;
+         height: 140px;
+         color: white;
+         width: 100%;
+         border: 1px black;
+         margin: 0px;
+      }
 
- }
- .button{
- color: white;
- padding: 10px;
- background-color: grey;
- font-weight: bold;
- float:right;
- }
- .content-container{
- background-color: skyblue;
- width: 82%;
- height: 400px;
- color: white;
- float: right;
- padding: 20px;
- margin: 0px;
- }
- .content{
- text-align: centre;
- }
- .sidebar{
- float: left;
- width: 15%;
- height: 600px;
- background-color: grey;
- color: white;
- 
+      .sidebar {
+         background-color: grey;
+         text-align: centre;
+         float: left;
+         height: 610px;
+         width: 15%;
+         border: 1px grey;
+      }
 
- }
- .footer{
-    background-color: yellow;
-    float: right;
+      .content {
+         background-color: skyblue;
+         text-align: centre;
+         width: 85%;
+         border: 1px skyblue;
+         margin-left: 0%;
+         height: 410px;
+         float: right;
+         color: white;
+      }
 
- 
- }
+      .footer-container {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(255, 231, 20);
+        width: 85%;
+        height: 198px;
+        text-align: center;
+        box-shadow: -2px -2px 8px rgba(0,0,0,0.1);
+        border-top-left-radius: 10px;
+        color: black;
+        font-weight: bold;
+        z-index: 100;
+    }
+      .button{
+         float: right;
+         background-color: lightgrey;
+         padding: 5px;
+         gap: 5px;
+         margin: 10px;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         font-weight: bold;
+         transition: background-color 0.3s ease;
+         font-size: 15px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         color: black;
 
- </style>
+      }
+      .button:hover {
+            background-color: #ddd;
+        }
+   </style>
 </head>
+
 <body>
- <div class  = "head-container">
- <div class = "header">
- <h1 style="text-color: white ;">Layout</h1>
- <h6 style="text-color: white ;">A PEN BY HEMANT RAJ SEN</h6>
- <button class="button">Fork</button><button class="button">Change View</button><button class="button">Log In</button><button class="button">Sign Up</button>
- </div>
- </div>
- <div class="content-container">
- <div class = "content">
- <br>
- <h1 style="text-align: centre;">Lorem ipsun dolor</h1>
- <p style="text-align: centre;">Lorem ipsum dolor slt amet,consectetur adipiscing.Ut porta, tellus convalls luctus,lorem diam mattis arcu,eu consequat dui tortor eget lacus.Donec meturs lingula,rutrum vilutpat neque vel, porta tincidunbt dul.Phasellis convallis tristique nuinc.Integer nunc nunc, finibus a maximus at, viverra ut lorem.Etiam id vellit risus. vestibulum saplen mauris,fermentum nec luctus nec,fringilla non orci.Nullam blandid prota tincidunt.Donfec placerat pretium dapibus.Ut interdum lorem ei nibh tincidunt vulputate.Aenean allquam gravida quam,vel pulvinar odio.Pellentesque sef feugl=iat ligula.Quisque sagittis porttitpr dul, ac lacinia mauris tempror vel.Domec rutrun lorem id niulla consequat vulputste.</p>
- </div>
- </div>
- <div class ="sidebar">
- <h3> Home </h3>
- <h3> Approach </h3>
- <h3> Work </h3>
- <h3> People </h3>
- <h3 style="color: black"> Jobs </h3>
- <h3 style="color: black"> Blog </h3>
- <h3 style="color: black"> Contact </h3>
- </div>
- </div> 
- <div class="footer-container">
- <p>This is the footer</p>
- </div>
-</body>
-</html>
--->
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>Lab6 Q1</title>
-      <style>
-         .topside{
-            background-color: black;
-            text-align: left;
-            height: 200px;
-            color: white;
-            width: 100%
-
-         }
-         .sidebar{
-            background-color: grey;
-            text-align: centre;
-            float: left;
-            height: 600px;
-            width: 15%;
-
-         }
-         .content{
-            background-color: skyblue;
-            text-align: centre;
-            width: 85%;
-            border: 1px skyblue;
-            margin-left: 0%;
-            height: 400px;
-
-         }
-         .footer{
-            background-color: yellow;
-            float: right;
-            height: 200px;
-            width: 85%;
-            border: 1px yellow;
-
-         }
-
-      </style>
-   </head>
-   <body>
-      <div class="topside">
-         <h1>Layout</h1>
-         <p>A PEN BY HEMANT RAJ SEN</p>
-          <button class="button">Fork</button><button class="button">Change View</button><button class="button">Log In</button><button class="button">Sign Up</button>
- </div>
- </div>
- <div class="content-container">
- <div class = "content">
- <br>
- <h1 style="text-align: centre;">Lorem ipsun dolor</h1>
- <p style="text-align: centre;">Lorem ipsum dolor slt amet,consectetur adipiscing.Ut porta, tellus convalls luctus,lorem diam mattis arcu,eu consequat dui tortor eget lacus.Donec meturs lingula,rutrum vilutpat neque vel, porta tincidunbt dul.Phasellis convallis tristique nuinc.Integer nunc nunc, finibus a maximus at, viverra ut lorem.Etiam id vellit risus. vestibulum saplen mauris,fermentum nec luctus nec,fringilla non orci.Nullam blandid prota tincidunt.Donfec placerat pretium dapibus.Ut interdum lorem ei nibh tincidunt vulputate.Aenean allquam gravida quam,vel pulvinar odio.Pellentesque sef feugl=iat ligula.Quisque sagittis porttitpr dul, ac lacinia mauris tempror vel.Domec rutrun lorem id niulla consequat vulputste.</p>
- </div>
- </div>
- <div class ="sidebar">
- <h3> Home </h3>
- <h3> Approach </h3>
- <h3> Work </h3>
- <h3> People </h3>
- <h3 style="color: black"> Jobs </h3>
- <h3 style="color: black"> Blog </h3>
- <h3 style="color: black"> Contact </h3>
- </div>
- </div> 
- <div class="footer-container">
- <p>This is the footer</p>
- </div>
-</body>
-</html>
+   <div class="topside">
+      <h1>Layout</h1>
+      <p>A PEN BY HEMANT RAJ SEN</p>
+      
+      <button class="button">Fork</button>
+      <button class="button">Change View</button>
+      <button class="button">Log In</button>
+      <button class="button">Sign Up</button>
+   </div>
+   <div class="content-container">
+      <div class="content">
+         <br>
+         <h1 style="text-align: center;">Lorem ipsun dolor</h1>
+         <p style="text-align: center;">Lorem ipsum dolor slt amet,consectetur adipiscing.Ut porta, tellus convalls
+            luctus,lorem diam mattis arcu,eu consequat dui tortor eget lacus.Donec meturs lingula,rutrum vilutpat neque
+            vel, porta tincidunbt dul.Phasellis convallis tristique nuinc.Integer nunc nunc, finibus a maximus at,
+            viverra ut lorem.Etiam id vellit risus. vestibulum saplen mauris,fermentum nec luctus nec,fringilla non
+            orci.Nullam blandid prota tincidunt.Donfec placerat pretium dapibus.Ut interdum lorem ei nibh tincidunt
+            vulputate.Aenean allquam gravida quam,vel pulvinar odio.Pellentesque sef feugl=iat ligula.Quisque sagittis
+            porttitpr dul, ac lacinia mauris tempror vel.Domec rutrun lorem id niulla consequat vulputste.</p>
       </div>
-   </body>
+   </div>
+   <div class="sidebar">
+      <h3 style="text-align: center; color: whitesmoke;"> Home </h3>
+      <h3 style="text-align: center; color: whitesmoke;"> Approach </h3>
+      <h3 style="text-align: center; color: whitesmoke;"> Work </h3>
+      <h3 style="text-align: center;"> People </h3>
+      <h3 style="text-align: center;"> Jobs </h3>
+      <h3 style="text-align: center;"> Blog </h3>
+      <h3 style="text-align: center;"> Contact </h3>
+   </div>
+    <div class="footer-container">
+      <p>This is the footer</p>
+   </div>
+</body>
+
 </html>
