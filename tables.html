@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tables in HTML</title>
+    <style>
+         *{
+            font-family: arial, sans-serif;
+        }
+        .container{
+            margin: 10px;
+            border: 1px white solid;
+        }
+        .header{
+            background-color: green;
+            color: white;
+            text-align: center;
+            height: 80px;
+            padding: 10px;
+        }
+        p,h2{
+            margin-top: 45px;
+        }
+        .table{
+            border-collapse: collapse;
+            border: 1px solid black;
+            width: 98%;
+            margin: auto;
+            text-align: left;
+        }
+        th{
+            background-color: lightgrey;
+        }
+        .footer{
+            background-color: black;
+            color: white;
+            text-align: center;
+            margin-top: 90px;
+            height: 80px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> My first Webpage in Tables</h1>
+        </div>
+        <h2><b>Lorem ipsum dolor sit.</b></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias veniam, vitae ratione vero qui rem?</p>
+        <br>
+        <br>
+        <table class="table" border="1">
+            <caption>Personal Information</caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hemant Raj Sen</td>
+                    <td>20</td>
+                    <td>Guna</td>
+                </tr>
+                <tr>
+                    <td>Paridhi Soni</td>
+                    <td>19</td>
+                    <td>Guna</td>
+                </tr>
+                <tr>
+                    <td>Lucky Gungun</td>
+                    <td>19.5</td>
+                    <td>Guna</td>
+                </tr>
+            </tbody>
+
+        </table>
+        <br>
+        <div class="footer">
+            <p> &copy; 2025 my webpage.All righths reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
