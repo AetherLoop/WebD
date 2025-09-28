@@ -1,0 +1,86 @@
+        *{
+            margin: 0;
+            padding:0;
+        }
+        :root{
+            --color: rgb(255, 167, 3);
+            --defpad: 15px;
+            --border-radius: 8px;
+            --header-height: 70px;
+            --footer-height: 100px;
+            --box-shadow: 2px 2px 15px 2px darkgrey;
+            --licolor: maroon;
+            --pcolor: grey;
+        }
+        /* This is Pseudo Selectors */
+        a:hover{
+            background-color: rgb(252, 232, 232);
+        }
+        a:link{
+            color: var(--licolor);
+        }
+        a:visited{
+            color: grey;
+        }
+        .header{
+            background-color: var(--color);
+            height: var(--header-height);
+            display: flex;
+            padding: var(--defpad);
+            position:sticky;
+            top:0;
+            z-index: 100;
+            box-shadow: var(--box-shadow);
+        }
+        .header h1{
+            text-align: left;
+        }
+        .header ul{
+            display: flex;
+            list-style: none;
+            justify-content: flex-end;
+            margin-left: 50vw;
+        }
+        .header ul li{
+            margin: 0 15px;
+            padding: 23px;
+            border-radius: var(--border-radius);
+            color: var(--licolor);
+            font-weight: bold;
+        }
+        .main-content{
+            padding: 20px;
+            font-size: 16px;
+            color: var(--pcolor);
+        }
+        .image{
+            padding: 20px;
+            text-align: center;
+        }
+        .image img{
+            width: 500px;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        .footer{
+            background-color: var(--color);
+            height: var(--footer-height);
+            display: flex;
+            gap: 40px;
+            padding: var(--defpad);
+            box-shadow: var(--box-shadow);
+            color: var(--licolor);
+            font-weight: bold;
+        }
+        .footer ul{
+            display: flex;
+            gap: 5px;
+
+        }
+        .footer ul li{
+            list-style: none;
+            padding: 23px;
+            font-weight: bold;
+            font-size: 16px;
+        }
