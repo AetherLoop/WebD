@@ -3,9 +3,14 @@
 <head>
    <title>Lab6 Q1</title>
    <style>
+      *{
+         margin: 0;
+         padding: 0;
+      }
       body{
          margin: 0px 0px 0px 0px;
          font-family:Arial, Helvetica, sans-serif;
+         position: absolute;
       }
       .topside {
          background-color: black;
@@ -19,11 +24,11 @@
 
       .sidebar {
          background-color: grey;
-         text-align: centre;
+         text-align: center;
          float: left;
-         height: 610px;
+         height: 80vh;
          width: 15%;
-         border: 1px grey;
+         border: 1px grey;;
       }
 
       .content {
@@ -38,9 +43,9 @@
       }
 
       .footer-container {
-        position: fixed;
-        right: 0;
-        bottom: 0;
+        position: sticky;
+        top: 750px;
+        left: 15%;
         background-color: rgb(255, 231, 20);
         width: 85%;
         height: 198px;
@@ -58,7 +63,7 @@
          gap: 5px;
          margin: 3px;
          border: none;
-         border-radius: 5px;
+         border-radius: 12px;
          cursor: pointer;
          font-weight: bold;
          transition: background-color 0.5s ease;
